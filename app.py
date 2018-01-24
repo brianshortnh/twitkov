@@ -35,4 +35,5 @@ def get_tweets(api, username, since=None):
         max_id=since)
 
 if __name__ == '__main__':
-    print(get_all_tweets("dancinpolkabear"))
+    data = [tweet.text for tweet in get_all_tweets("dancinpolkabear")]
+    print(data)
