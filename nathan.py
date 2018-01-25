@@ -8,8 +8,9 @@ def generate(stuff):
     text_model = markovify.Text(" ".join(stuff))
 
     #Print 100 Tweet-length sentences
-    for i in range(5):
-        print(text_model.make_short_sentence(140))
+#    for i in range(5):
+#        print(text_model.make_short_sentence(140))
+    return text_model.make_short_sentence(140)
 
 def get_all_tweets(username):
     """Spawns api and gets last 2000 tweets

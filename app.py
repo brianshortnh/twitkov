@@ -7,12 +7,8 @@ def generate(stuff):
     # Build the model.
     text_model = markovify.Text(" ".join(stuff))
 
-    # Print five randomly-generated sentences
+    #Print 100 Tweet-length sentences
     for i in range(5):
-        print(text_model.make_sentence())
-
-    # Print three randomly-generated sentences of no more than 140 characters
-    for i in range(88):
         print(text_model.make_short_sentence(140))
 
 def get_all_tweets(username):
@@ -23,8 +19,10 @@ def get_all_tweets(username):
     api = new_api()
     tweets = get_tweets(api, username)
 
-    for i in range(0, 300):
+    for i in range(0, 10):
         tweets += get_tweets(api, username, since=tweets[len(tweets)-1].id)
+#Debug
+        print('poop ' + str(i))
 
     return tweets
 
