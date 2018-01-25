@@ -3,14 +3,18 @@ import twitter
 import os
 import markovify
 
-def generate(stuff):
-    # Build the model.
-    text_model = markovify.Text(" ".join(stuff))
+def generate(tweets, bound):
+    generated = []
 
-    #Print 100 Tweet-length sentences
-#    for i in range(5):
-#        print(text_model.make_short_sentence(140))
-    return text_model.make_short_sentence(140)
+    # Build the model.
+    text_model = markovify.Text(" ".join(tweets))
+
+    # Create a list ofgenerated tweets
+    for i in range(0, bound):
+        new_tweet = text_model.make_short_sentence(140)
+        generated.append(new_tweet)
+
+    return generated
 
 def get_all_tweets(username):
     """Spawns api and gets last 2000 tweets
@@ -24,6 +28,7 @@ def get_all_tweets(username):
         tweets += get_tweets(api, username, since=tweets[len(tweets)-1].id)
 #Debug
         print('poop ' + str(i))
+        print(username)
 
     return tweets
 
@@ -45,6 +50,11 @@ def get_tweets(api, username, since=None):
         exclude_replies=True,
         max_id=since)
 
+def make_tweet_string(username, num_tweets):
+    """Produce a valid string of generated tweets"""
+    data = [tweet.text for tweet in get_all_tweets(username)]
+    tweet_string = "<br/>#############<br/>".join(generate(data, num_tweets))
+    return tweet_string
+
 if __name__ == '__main__':
-    data = [tweet.text for tweet in get_all_tweets("realDonaldTrump")]
-    generate(data)
+    make_tweet_string("realDonaldTrump", 10)
