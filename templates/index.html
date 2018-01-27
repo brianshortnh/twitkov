@@ -21,7 +21,9 @@
             <button id="form-submit">Hi Ho!</button>
             <input type="text" id="form-input" placeholder="Enter username here" />
         </div>
-        <div id="loader" hidden>hi</div>
+        <div id="loader" hidden>
+            loading
+        </div>
         <div id="results" />
     </body>
     <script>
@@ -37,6 +39,14 @@
          }
      }
 
+     function makeBlockQuote(username, text) {
+         return `<blockquote>
+                     <p>${text}</p>
+                     <footer>
+                         — <cite><a href="https://twitter.com/${username}">@${username}</a></cite>
+                     </footer>
+                 </blockquote>`;
+     }
      formSubmit.addEventListener("click", () => {
          var username = formInput.value
 
@@ -53,10 +63,10 @@
              // Decode to Javascript object
              res.json().then((decoded) => {
                  var author = decoded.username;
-
+                 var text = decoded.tweets.reduce((a, b) => (a + makeBlockQuote(author, b)));
+                 resultView.innerHTML = text;
              });
          });
      });
     </script>
-    <!-- <script type="text/javascript" src="/static/scripts.js" /> -->
 </html>
