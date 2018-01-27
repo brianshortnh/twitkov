@@ -22,3 +22,26 @@ h1, h2, h3, h4 {
     border-radius: 1em;
     background-color: #FFF;
 }
+
+.loader {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.load-txt {
+    font-size: 3em;
+}
+
+.load-img {
+    animation: spin infinite 2.5s linear;
+    border-radius: 100%;
+}
+
+@keyframes spin {
+    0% {transform:rotate(0deg) scale(1,1);}
+    50% {transform:rotate(180deg) scale(1,1);}
+    100% {transform:rotate(360deg) scale(1,1);}
+}
