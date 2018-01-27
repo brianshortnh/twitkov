@@ -12,12 +12,13 @@ h1, h2, h3, h4 {
     font-family: 'Cinzel Decorative', cursive;
 }
 
-.form-input {
+#form-input {
     border-radius: 1em;
-    height: 4em;
+    height: 4.4em;
     width: 60%;
 }
-.form-submit {
+
+#form-submit {
     padding: 1.7em;
     border-radius: 1em;
     background-color: #FFF;
