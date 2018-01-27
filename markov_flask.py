@@ -1,4 +1,5 @@
-#Flask quickstart
+"""Twitkov Flask App"""
+import json
 import markov_app as mkv
 from flask import Flask, request, url_for, render_template
 
@@ -7,6 +8,13 @@ app = Flask(__name__, static_url_path='/static')
 @app.route('/')
 def index(name=None):
     return render_template('index.html', name=name)
+
+@app.route('/tweets/<twitter_handle>', methods=['GET'])
+def get_tweets(twitter_handle):
+    """Makes tweets for requested user"""
+    tweets = mkv.make_tweets(twitter_handle, 10)
+    return json.dumps(tweets)
+
 
 @app.route('/<twitter_handle>', methods=['GET'])
 #def make_one_tweet(twitter_handle):

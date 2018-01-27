@@ -50,6 +50,17 @@ def get_tweets(api, username, since=None):
         exclude_replies=True,
         max_id=since)
 
+def make_tweets(username, num_tweets):
+    """Produce an array of generated tweets"""
+    data = [tweet.text for tweet in get_all_tweets(username)]
+    tweets = generate(data, num_tweets)
+
+    return {
+        'username': username,
+        'tweets': tweets
+    }
+
+
 def make_tweet_string(username, num_tweets):
     """Produce a valid string of generated tweets"""
     data = [tweet.text for tweet in get_all_tweets(username)]
