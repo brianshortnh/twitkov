@@ -14,12 +14,13 @@ h1, h2, h3, h4 {
 
 #form-input {
     border-radius: 1em;
-    height: 4.4em;
+    font-size: 1.2em;
     width: 60%;
+    padding: 1em;
 }
 
 #form-submit {
-    padding: 1.7em;
+    padding: 2.2em;
     border-radius: 1em;
     background-color: #FFF;
 }
