@@ -1,5 +1,5 @@
 <h1 align="center"><a href="http://twitkov.club">twitkov</a></h1>
-<img align="center" src="/static/markov-portrait.jpg" />
+<img align="center" height="150px" src="/static/markov-portrait.jpg" />
 
 An application that harvests a user's Twitter history and spits out a faithful
 representation of their entire soul!
