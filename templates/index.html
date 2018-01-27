@@ -28,7 +28,7 @@
         <h4><i>Feel it course through you</i></h4>
         <div id="form">
             <button id="form-submit">Hi Ho!</button>
-            <input type="text" id="form-input" placeholder="Enter username here" />
+            <input type="text" id="form-input" onkeypress="handleEnter(event)" placeholder="Enter username here" />
         </div>
         <div id="loader" hidden>
             loading
@@ -36,18 +36,21 @@
         <div id="results" />
     </body>
     <script>
+     // Shortcuts to DOM objects
      var form = document.getElementById('form');
      var formInput = document.getElementById('form-input');
      var formSubmit = document.getElementById('form-submit');
      var loader = document.getElementById('loader');
      var resultView = document.getElementById('results');
 
+     // Remove all tweet results from screen.
      function clearResults() {
          while (resultView.firstChild) {
              resultView.removeChild(resultView.firstChild);
          }
      }
 
+     // Utility for making blockquote div with author and tweet text
      function makeBlockQuote(username, text) {
          return `<blockquote>
                      <p>${text}</p>
@@ -56,16 +59,21 @@
                      </footer>
                  </blockquote>`;
      }
-     formSubmit.addEventListener("click", () => {
+
+     // Main function
+     function getTweets() {
          var username = formInput.value
 
          // House keeping
          clearResults();
+
+         // Show loading spinner
          form.hidden = true;
          loader.hidden = false;
 
          // Perform request
          fetch('/tweets/' + username).then((res) => {
+             // Hide loading spinner
              loader.hidden = true;
              form.hidden = false;
 
@@ -76,6 +84,16 @@
                  resultView.innerHTML = text;
              });
          });
-     });
+     }
+
+     function handleEnter(e) {
+         if(e.keyCode === 13) {
+             e.preventDefault();
+             getTweets()
+         }
+     }
+
+     // Add listeners for input
+     formSubmit.addEventListener("click", getTweets);
     </script>
 </html>
