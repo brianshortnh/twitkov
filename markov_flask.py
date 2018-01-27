@@ -1,9 +1,14 @@
 #Flask quickstart
 import markov_app as mkv
-from flask import Flask, request, json
-app = Flask(__name__)
+from flask import Flask, request, url_for, render_template
 
-@app.route('/<twitter_handle>')
+app = Flask(__name__, static_url_path='/static')
+
+@app.route('/')
+def index(name=None):
+    return render_template('index.html', name=name)
+
+@app.route('/<twitter_handle>', methods=['GET'])
 #def make_one_tweet(twitter_handle):
 #    tweet = mkv.make_tweet_string(twitter_handle, 1)
 #    return "New tweet for {0}:\n{1}".format(twitter_handle, tweet)

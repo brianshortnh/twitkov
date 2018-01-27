@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <title>Elusive Twitter Markov Club</title>
+        <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+        <meta name="description" content="Twitkov: The Markov Tweet Generator" />
+        <meta author="Brian Short & Matt Lewis" />
+        <meta property="og:url" content="http://twitkov.club/" />
+        <meta property="og:title" content="Twitkov" />
+        <meta property="og:description" content="The Markov Tweet Generator" />
+        <meta property="twitter:title" content="Twitkov" />
+        <meta property="twitter:description" content="The Markov Tweet Generator" />
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+    </head>
+    <body>
+        <h1>Twitkov Von Hammerschmidt</h1>
+        <h4><i>Feel it course through you</i></h4>
+        <div id="form">
+            <button id="form-submit">Hi Ho!</button>
+            <input type="text" id="form-input" placeholder="Enter username here" />
+        </div>
+        <div id="loader" hidden>hi</div>
+        <div id="results" />
+    </body>
+    <script>
+     var form = document.getElementById('form');
+     var formInput = document.getElementById('form-input');
+     var formSubmit = document.getElementById('form-submit');
+     var loader = document.getElementById('loader');
+     var resultView = document.getElementById('results');
+
+     function clearResults() {
+         while (resultView.firstChild) {
+             resultView.removeChild(resultView.firstChild);
+         }
+     }
+
+     formSubmit.addEventListener("click", () => {
+         var username = formInput.value
+
+         // House keeping
+         clearResults();
+         form.hidden = true;
+         loader.hidden = false;
+
+         // Perform request
+         fetch('/tweets/' + username).then((res) => {
+             loader.hidden = true;
+             form.hidden = false;
+
+             // Decode to Javascript object
+             res.json().then((decoded) => {
+                 var author = decoded.username;
+
+             });
+         });
+     });
+    </script>
+    <!-- <script type="text/javascript" src="/static/scripts.js" /> -->
+</html>
