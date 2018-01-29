@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="landing">
+    <div class="column">
+        <img class="media markov" src="/static/markov-portrait-small.jpg" />
+        <p><i>Andrey Markov (14 June 1856 N.S. – 20 July 1922)</i></p>
+    </div>
+    <div class="column land-desc">
+        {% include 'search.html' %}
+        <div class="description">
+            <p>
+                Markov Chain blah blah blah. Enter a Twitter username. All of the user's tweets
+                will be gathered and fed into a Markov Chain Generator.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

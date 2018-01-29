@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="results">
+    <div class="headline">
+        <div class="headline__profile">
+            <h3>{{ username }}</h3>
+            <img src="/static/markov-portrait-2.jpeg" />
+        </div>
+        <div clas="headline-long">
+            <ul>
+                {% for item in long_tweets -%}
+                <li>{{ item }}</li>
+                {%- endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="additional">
+        <div class="additional__musings">
+            <h3>Letters to the editor</h3>
+            <ul>
+                {% for item in tweets -%}
+                <li>{{ item }}</li>
+                {%- endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

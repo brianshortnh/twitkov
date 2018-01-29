@@ -1,26 +1,28 @@
 """Twitkov Flask App"""
 import json
 import markov_app as mkv
-from flask import Flask, request, url_for, render_template
+from flask import Flask, request, render_template
 
 app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
-def index(name=None):
-    return render_template('index.html', name=name)
+def index():
+    """Main page"""
+    return render_template('landing.html')
 
-@app.route('/tweets/<twitter_handle>', methods=['GET'])
-def get_tweets(twitter_handle):
-    """Makes tweets for requested user"""
-    tweets = mkv.make_tweets(twitter_handle, 10)
+@app.route('/tweets', methods=['GET'])
+def get_tweets():
+    """Makes tweets for requested user and return rendered template"""
+    twitter_handle = request.args['twitter_handle']
+    tweets = mkv.make_tweets(twitter_handle, 30)
+    return render_template(
+        'results.html',
+        username=twitter_handle,
+        tweets=tweets['tweets'],
+        long_tweets=tweets['long'])
+
+@app.route('/api/<twitter_handle>', methods=['GET'])
+def get_api_tweets(twitter_handle):
+    """Makes tweets for requested user and return as json"""
+    tweets = mkv.make_tweets(twitter_handle, 30)
     return json.dumps(tweets)
-
-
-@app.route('/<twitter_handle>', methods=['GET'])
-#def make_one_tweet(twitter_handle):
-#    tweet = mkv.make_tweet_string(twitter_handle, 1)
-#    return "New tweet for {0}:\n{1}".format(twitter_handle, tweet)
-
-def make_five_tweets(twitter_handle):
-    tweets = mkv.make_tweet_string(twitter_handle, 5)
-    return "New tweets for {0}:<br/>{1}".format(twitter_handle, tweets)
