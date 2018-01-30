@@ -1,4 +1,5 @@
 #Ignore the __pycache__ directory
 __pycache__/
+.cache/
 .DS_Store
 .eggs
