@@ -19,13 +19,21 @@ def get_all_tweets(username):
 
     return tweets
 
+def get_profile_url(api, username):
+    """Get a big version of the profile image"""
+    user = api.GetUser(screen_name=username),
+
+    return user[0].profile_image_url.replace("normal", "400x400")
+
 def make_tweets(username, num_tweets):
     """Produce an array of generated tweets"""
+    api = new_api()
     data = [tweet.text for tweet in get_all_tweets(username)]
     model = make_markov_model(data)
 
     return {
         'username': username,
+        'profile_url': get_profile_url(api, username),
         'tweets': generate(model, 140, num_tweets),
         'long': generate(model, 240, 2),
     }
