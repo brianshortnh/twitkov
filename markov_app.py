@@ -14,7 +14,7 @@ def get_all_tweets(username):
     api = new_api()
     tweets = get_tweets(api, username)
 
-    for i in range(0, 20):
+    for _ in range(0, 20):
         tweets += get_tweets(api, username, since=tweets[len(tweets)-1].id)
 
     return tweets
