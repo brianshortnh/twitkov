@@ -1,22 +1,20 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="results hide-on-load">
-    <div class="headline">
-        <div class="headline__profile">
-            <h3>{{ username }}</h3>
+<!-- <div class="content hide-on-load"> -->
+    <div class="landing hide-on-load">
+        <div class="column">
+            <h3 class="name">{{ username }}</h3>
             <img class="media" src="{{ profile_url }}" />
         </div>
-        <div clas="headline-long">
-            <ul>
-                {% for item in long_tweets -%}
-                <li>{{ item }}</li>
-                {%- endfor %}
-            </ul>
+        <div class="long column">
+            {% for item in long_tweets -%}
+            <p>{{ item }}</p>
+            {%- endfor %}
         </div>
     </div>
-    <div class="additional">
+    <div class="additional hide-on-load">
+        <h3>Letters to the editor</h3>
         <div class="additional__musings">
-            <h3>Letters to the editor</h3>
             <ul>
                 {% for item in tweets -%}
                 <li>{{ item }}</li>
@@ -24,5 +22,5 @@
             </ul>
         </div>
     </div>
-</div>
+    <!-- </div> -->
 {% endblock %}
