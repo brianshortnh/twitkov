@@ -15,11 +15,13 @@ def get_tweets():
     """Makes tweets for requested user and return rendered template"""
     twitter_handle = request.args['twitter_handle']
     tweets = mkv.make_tweets(twitter_handle, 30)
+
     return render_template(
         'results.html',
         username=twitter_handle,
         tweets=tweets['tweets'],
-        long_tweets=tweets['long'])
+        long_tweets=tweets['long'],
+        profile_url=tweets['profile_url'])
 
 @app.route('/api/<twitter_handle>', methods=['GET'])
 def get_api_tweets(twitter_handle):

@@ -1,7 +1,7 @@
 /* Overwrite defaults */
 body {
     font-family: 'Droid Serif', serif;
-    font-size: 14px;
+    font-size: .8em;
     color: #2f2f2f;
     background-color: #f9f7f1;
 }
@@ -90,6 +90,18 @@ img {
     font-style: italic;
 }
 
+.long {
+    max-width: 50%;
+}
+
+.name {
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    padding: .5em 0 .5em 0;
+    margin: .02em 0 1.5em 0;
+    text-align: center;
+}
+
 .markov {
     max-width: 20em;
 }
@@ -174,11 +186,22 @@ img {
     .collumn{
         width: 100%;
     }
-        .column + .column {
-            border-left: none;
-        }
+    .column + .column {
+        border-left: none;
+    }
+    .long {
+        max-width: 100%;
+    }
     header {
         overflow: hidden;
     }
+}
 
+.additional {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.additional h3 {
+    text-align: center;
 }
