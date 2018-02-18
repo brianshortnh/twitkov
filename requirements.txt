@@ -2,3 +2,4 @@
 Flask==0.12.2
 markovify==0.7.1
 python-twitter==3.3
+behave==1.2.5
