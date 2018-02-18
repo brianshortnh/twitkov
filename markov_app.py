@@ -30,12 +30,6 @@ def make_tweets(username, num_tweets):
         'long': generate(model, 240, 2),
     }
 
-def make_tweet_string(username, num_tweets):
-    """Produce a valid string of generated tweets"""
-    data = [tweet.text for tweet in get_all_tweets(username)]
-    tweet_string = "<br/>#############<br/>".join(generate(data, 140, num_tweets))
-    return tweet_string
-
 # Utility
 def new_api():
     """Wrapper around spawning twitter api"""
@@ -60,4 +54,4 @@ def make_markov_model(tweets):
     return markovify.Text(" ".join(tweets))
 
 if __name__ == '__main__':
-    make_tweet_string("realDonaldTrump", 10)
+    print('butts')
