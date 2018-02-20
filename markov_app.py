@@ -1,5 +1,6 @@
 """Rough sample app of Markov Generator"""
 import os
+import re
 import twitter
 import markovify
 
@@ -25,10 +26,13 @@ def get_profile_url(api, username):
 
     return user[0].profile_image_url.replace("normal", "400x400")
 
+def remove_twitlonger(tweet_list):
+    return [re.sub(" \S*…[^']*", "", tweet) for tweet in tweet_list]
+
 def make_tweets(username, num_tweets):
     """Produce an array of generated tweets"""
     api = new_api()
-    data = [tweet.text for tweet in get_all_tweets(username)]
+    data = remove_twitlonger([tweet.text for tweet in get_all_tweets(username)])
     model = make_markov_model(data)
 
     return {
