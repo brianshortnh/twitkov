@@ -126,7 +126,8 @@ img {
 .description {
     max-width: 84%;
     margin-top: 1em;
-    align-self: center
+    align-self: center;
+    font-size: 1.3em;
 }
 
 .credits {
