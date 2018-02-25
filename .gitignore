@@ -1,6 +1,9 @@
 #Ignore the __pycache__ directory
 __pycache__/
 .cache/
+dist/
+flaskr.egg-info/
 .DS_Store
 .eggs
+.env
 *.swp
