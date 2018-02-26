@@ -27,7 +27,8 @@ def get_profile_url(api, username):
     return user[0].profile_image_url.replace("normal", "400x400")
 
 def remove_twitlonger(tweet_list):
-    return [re.sub(" \S*…[^']*", "", tweet) for tweet in tweet_list]
+    """Removes all tweets that have a twitlonger link in them"""
+    return [re.sub(r" \S*…[^']*", "", tweet) for tweet in tweet_list]
 
 def make_tweets(username, num_tweets):
     """Produce an array of generated tweets"""
