@@ -91,6 +91,8 @@ img {
 }
 
 .long {
+    font-size: 1.3em;
+    margin-top: 2.5em;
     max-width: 50%;
 }
 
@@ -172,14 +174,17 @@ img {
 
 }
 @media only all and (max-width: 1200px) {
-    .collumn{
+    .collumn {
         width: 31%;
     }
 
 }
     @media only all and (max-width: 900px) {
-    .collumn{
+    .collumn {
         width: 47%;
+    }
+    .long {
+        max-width: 70%;
     }
 
 }
@@ -192,6 +197,7 @@ img {
     }
     .long {
         max-width: 100%;
+        margin-top: 1em;
     }
     header {
         overflow: hidden;
@@ -201,6 +207,7 @@ img {
 .additional {
     padding-left: 4em;
     padding-right: 4em;
+    font-size: 1.2em;
 }
 
 .additional h3 {
