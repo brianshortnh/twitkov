@@ -3,6 +3,8 @@
     <img align="center" height="150px" src="/static/markov-portrait.jpg" />
 </div>
 
+[![Build Status](https://travis-ci.org/brianshortnh/twitkov.svg?branch=master)](https://travis-ci.org/brianshortnh/twitkov)
+
 An application that harvests a user's Twitter history and spits out a faithful
 representation of their entire soul!
 
