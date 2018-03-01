@@ -91,6 +91,8 @@ img {
 }
 
 .long {
+    font-size: 1.3em;
+    margin-top: 2.5em;
     max-width: 50%;
 }
 
@@ -126,7 +128,8 @@ img {
 .description {
     max-width: 84%;
     margin-top: 1em;
-    align-self: center
+    align-self: center;
+    font-size: 1.3em;
 }
 
 .credits {
@@ -170,27 +173,19 @@ img {
     }
 
 }
-@media only all and (max-width: 1200px) {
-    .collumn{
-        width: 31%;
-    }
-
-}
-    @media only all and (max-width: 900px) {
-    .collumn{
-        width: 47%;
+@media only all and (max-width: 900px) {
+    .long {
+        max-width: 70%;
     }
 
 }
 @media only all and (max-width: 600px) {
-    .collumn{
-        width: 100%;
-    }
     .column + .column {
         border-left: none;
     }
     .long {
         max-width: 100%;
+        margin-top: 1em;
     }
     header {
         overflow: hidden;
@@ -200,6 +195,7 @@ img {
 .additional {
     padding-left: 4em;
     padding-right: 4em;
+    font-size: 1.2em;
 }
 
 .additional h3 {
