@@ -173,25 +173,13 @@ img {
     }
 
 }
-@media only all and (max-width: 1200px) {
-    .collumn {
-        width: 31%;
-    }
-
-}
-    @media only all and (max-width: 900px) {
-    .collumn {
-        width: 47%;
-    }
+@media only all and (max-width: 900px) {
     .long {
         max-width: 70%;
     }
 
 }
 @media only all and (max-width: 600px) {
-    .collumn{
-        width: 100%;
-    }
     .column + .column {
         border-left: none;
     }
