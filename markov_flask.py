@@ -1,9 +1,16 @@
 """Twitkov Flask App"""
 import json
+import os
 import markov_app as mkv
 from flask import Flask, request, render_template
 
-app = Flask(__name__, static_url_path='/static')
+# Use cdn if in production
+if os.getenv("RUN_TYPE") == 'production':
+    STATIC_URL_PATH = '//cdn.twitkov.club'
+else:
+    STATIC_URL_PATH = '/static'
+
+app = Flask(__name__, static_url_path=STATIC_URL_PATH)
 
 @app.route('/')
 def index():
