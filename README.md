@@ -1,5 +1,5 @@
 <h1 align="center"><a href="https://twitkov.club">Twitkov</a></h1>
-<img align="center" src="/static/markov-portrait-2.jpeg" />
+<p align="center"><img src="/static/markov-portrait-2.jpeg" /></p>
 
 [![Build Status](https://travis-ci.org/brianshortnh/twitkov.svg?branch=master)](https://travis-ci.org/brianshortnh/twitkov)
 
