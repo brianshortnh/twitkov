@@ -1,7 +1,42 @@
 language: python
+
 python:
+  - "3.5"
   - "3.6"
+  - "3.7-dev"
+
+cache: pip
+
 install:
+  - pip install virtualenv
+  - virtualenv twit_ci
+  - source twit_ci/bin/activate
   - pip install -r requirements.txt
+
+before_script:
+  - source twit_ci/bin/activate
+
 script:
-  - behave
+  - travis_retry behave
+
+deploy:
+  # Static Assets
+  - provider: s3
+    on:
+      branch: master
+      python: "3.6"
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: cdn.twitkov.club
+    skip_cleanup: true
+    local_dir: ./static
+    cache_control: "max-age=21600"
+  # API
+  - provider: script
+    skip_cleanup: true
+    on:
+      branch: master
+      python: "3.6"
+    script:
+      - pip install zappa
+      - zappa update production
