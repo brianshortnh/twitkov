@@ -1,6 +1,6 @@
 <div style="text-align: center">
-    <h1 align="center"><a href="http://twitkov.club">twitkov</a></h1>
-    <img align="center" height="150px" src="/static/markov-portrait.jpg" />
+    <h1 align="center"><a href="https://twitkov.club">Twitkov</a></h1>
+    <img align="center" src="/static/markov-portrait-2.jpeg" />
 </div>
 
 [![Build Status](https://travis-ci.org/brianshortnh/twitkov.svg?branch=master)](https://travis-ci.org/brianshortnh/twitkov)
@@ -8,17 +8,19 @@
 An application that harvests a user's Twitter history and spits out a faithful
 representation of their entire soul!
 
-## How to run twitkov
-Clone the repo:
-`git clone https://github.com/brianshortnh/twitkov.git` or
-`git clone git@github.com:brianshortnh/twitkov.git`
+## How to run Twitkov
 
-Install requirements:
-`pip3 install -r requirements.txt`
-
-To run the app, first set your FLASK_APP variable, then run flask:
 ```bash
+# Clone
+git clone https://github.com/brianshortnh/twitkov.git
+
+# Install requirements:
+pip3 install -r requirements.txt
+
+# To run the app, first set your FLASK_APP variable
 export FLASK_APP=markov_flask.py
+
+# Now run flask
 flask run
 ```
 
