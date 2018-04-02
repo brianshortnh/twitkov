@@ -37,8 +37,4 @@ deploy:
     on:
       branch: master
       python: "3.6"
-    script:
-      - cd $TRAVIS_BUILD_DIR
-      - source twit_ci/bin/activate
-      - pip install zappa
-      - zappa update production
+    script: "cd $TRAVIS_BUILD_DIR && chmod +x ./deploy.sh && ./deploy.sh"
