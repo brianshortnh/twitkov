@@ -6,7 +6,7 @@ from flask import Flask, request, render_template
 
 # Use cdn if in production
 if os.getenv("RUN_TYPE") == 'production':
-    STATIC_URL_PATH = '//cdn.twitkov.club'
+    STATIC_URL_PATH = 'https://cdn.twitkov.club'
 else:
     STATIC_URL_PATH = '/static'
 
