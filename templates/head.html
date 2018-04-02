@@ -2,15 +2,43 @@
     <meta charset="utf-8">
     <title>Twitkov</title>
 
-    <!-- Meta stuff -->
+    <!-- General -->
+    <meta name="robots" content="index, follow" />
+    <meta name='url' content="https://twitkov.club" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <meta name="description" content="Markov Tweet Generator created by the elusive Twitter Club" />
     <meta author="Brian Short & Matt Lewis" />
-    <meta property="og:url" content="http://twitkov.club/" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="bookmark" title="Twitkov" href="https://twitkov.club" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Twitkov" />
+    <meta property="og:description" content="Markov Tweet Generator" />
+    <meta property="og:url" content="https://twitkov.club" />
+    <meta property="og:image" content="{{ url_for('static', filename='markov-portrait-2.jpeg') }}" />
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-title" content="Twitkov" />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-touch-fullscreen' content="yes" />
+    <meta name='apple-mobile-web-app-status-bar-style' content="black-translucen" />
+
+    <!-- Microsoft -->
+    <meta name="application-name" content="Twitkov" />
+    <meta name="msapplication-tooltip" content="Markov Tweet Generator" />
+    <meta name="msapplication-TileColor" content="#f9f7f1" />
+    <meta name="msapplication-navbutton-color" content="#2f2f2f" />
+    <meta name="msapplication-square70x70logo" content="{{ url_for('static', filename='markov-portrait-2.jpeg') }}" />
+    <meta name="msapplication-square150x150logo" content="{{ url_for('static', filename='markov-portrait-2.jpeg') }}" />
+    <meta name="msapplication-wide310x150logo" content="{{ url_for('static', filename='markov-portrait-2.jpeg') }}" />
+    <meta name="msapplication-square310x310logo" content="{{ url_for('static', filename='markov-portrait-2.jpeg') }}" />
+
+    <!-- Android -->
+    <meta name="theme-color" content="#2f2f2f">
 
     <!-- Styyyle -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
 
     <!-- Google Analytics Tag... Track stuff-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110856410-10"></script>
