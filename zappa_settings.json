@@ -5,7 +5,6 @@
     "project_name": "twitkov",
     "runtime": "python3.6",
     "s3_bucket": "twit-bucket",
-    "domain": "twitkov.club",
     "environment_variables": {"RUN_TYPE": "production"}
   }
 }
