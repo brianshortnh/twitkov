@@ -38,5 +38,6 @@ deploy:
       branch: master
       python: "3.6"
     script:
+      - source twit_ci/bin/activate
       - pip install zappa
       - zappa update production

@@ -4,7 +4,6 @@
     "aws_region": "us-east-1",
     "project_name": "twitkov",
     "runtime": "python3.6",
-    "s3_bucket": "twit-bucket",
-    "environment_variables": {"RUN_TYPE": "production"}
+    "s3_bucket": "twit-bucket"
   }
 }
