@@ -1,15 +1,15 @@
 <head>
     <meta charset="utf-8">
-    <title>Twitkov</title>
 
     <!-- General -->
-    <meta name="robots" content="index, follow" />
-    <meta name='url' content="https://twitkov.club" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <meta name="description" content="Markov Tweet Generator created by the elusive Twitter Club" />
+    <title>Twitkov</title>
     <meta author="Brian Short & Matt Lewis" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-    <link rel="bookmark" title="Twitkov" href="https://twitkov.club" />
+    <meta name="description" content="Markov Chain Generator for tweets." />
+    <meta name='url' content="https://twitkov.club" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Mobile -->
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <meta name="mobile-web-app-capable" content="yes" />
 
     <!-- Open Graph -->
@@ -18,30 +18,14 @@
     <meta property="og:url" content="https://twitkov.club" />
     <meta property="og:image" content="https://cdn.twitkov.club/markov-portrait-2.jpeg" />
 
-    <!-- ios -->
-    <meta name="apple-mobile-web-app-title" content="Twitkov" />
-    <meta name='apple-mobile-web-app-capable' content='yes' />
-    <meta name='apple-touch-fullscreen' content="yes" />
-    <meta name='apple-mobile-web-app-status-bar-style' content="black-translucent" />
-
-    <!-- Microsoft -->
-    <meta name="application-name" content="Twitkov" />
-    <meta name="msapplication-tooltip" content="Markov Tweet Generator" />
-    <meta name="msapplication-TileColor" content="#f9f7f1" />
-    <meta name="msapplication-navbutton-color" content="#2f2f2f" />
-    <meta name="msapplication-square70x70logo" content="https://cdn.twitkov.club/markov-portrait-2.jpeg" />
-    <meta name="msapplication-square150x150logo" content="https://cdn.twitkov.club/markov-portrait-2.jpeg" />
-    <meta name="msapplication-wide310x150logo" content="https://cdn.twitkov.club/markov-portrait-2.jpeg" />
-    <meta name="msapplication-square310x310logo" content="https://cdn.twitkov.club/markov-portrait-2.jpeg" />
-
-    <!-- Android -->
-    <meta name="theme-color" content="#2f2f2f">
-
     <!-- Styyyle -->
+    <meta name="theme-color" content="#2f2f2f">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <link rel="bookmark" title="Twitkov" href="https://twitkov.club" />
 
-    <!-- Google Analytics Tag... Track stuff-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110856410-10"></script>
+    <!-- GA Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110856410-10" />
     <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
