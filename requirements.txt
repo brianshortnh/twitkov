@@ -1,4 +1,4 @@
-#Requirements for Twitkov Von Hammerschmidt
+# Requirements for Twitkov Von Hammerschmidt
 Flask==1.0
 markovify==0.7.1
 python-twitter==3.4.1
